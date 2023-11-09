@@ -1,0 +1,27 @@
+html 
+    head 
+        title web2-lab2
+    body
+        p SQL injection
+        form(action="/sqlinjection", method="post")
+            if check
+                input(type="checkbox", name="check", value=" Ranjivost uključena", checked)
+            else 
+                input(type="checkbox", name="check", value=" Ranjivost uključena")
+            br
+            label(for='user') User:
+            if user 
+                input(type="text", name="user", value="" + user, required)
+            else 
+                input(type="text", name="user", value="", required)
+            label(for='password') Password:
+            if password 
+                input(type="text", name="password", value="" + password, required)
+            else 
+                input(type="text", name="password", value="", required)
+            input(type="submit", value="Submit")
+
+        if userData 
+            #{JSON.stringify(userData)}
+
+        
